@@ -387,9 +387,9 @@
 
                       <!-- ======input===== -->
                       <div>
-                        <label class="input input-bordered flex items-center gap-2 px-4 py-7 mt-3">
-                          <input type="text" class="grow border-0 " placeholder="Have any coupon?" />
-                          <button class="bg-green px-6 py-2 text-white font-semibold rounded-lg">Apply</button>
+                        <label class="input flex items-center gap-2 px-4 py-7 mt-3">
+                          <input type="text" class="lg:grow border-0" placeholder="Have any coupon?" />
+                          <button class="bg-green px-6 py-2 text-white font-semibold rounded-lg -ml-20 lg:-ml-0">Apply</button>
                         </label>
                       </div>
 
@@ -399,6 +399,30 @@
                         <h6 class="font-semibold text-lg">BDT <span>1100</span></h6>
                       </div>
                     </div>
+                  </div>
+
+                  <!-- form -->
+                  <div class=" p-3">
+                    <form action="" class="flex flex-col gap-5">
+                      <!-- name -->
+                      <label for="name" >
+                        <h6 class="text-lg font-semibold">Passenger Name<sup>*</sup></h6>
+                        <input type="text" placeholder="Enter Your name" class="input input-bordered w-full " />
+                      </label>
+
+                      <!-- Phone Number -->
+                      <label for="phone_number" >
+                        <h6 class="text-lg font-semibold">Phone Number<sup>*</sup></h6>
+                        <input type="number" placeholder="Enter Your Phone Number" class="input input-bordered w-full " />
+                      </label>
+                      <!-- Email -->
+                      <label for="phone_number" >
+                        <h6 class="text-lg font-semibold">Email ID</h6>
+                        <input type="number" placeholder="Enter Your email id" class="input input-bordered w-full" />
+                      </label>
+
+                      <input type="submit" value="Next" class="input input-bordered w-full bg-green font-bold text-lg" />
+                    </form>
                   </div>
                 </section>
               </section>
