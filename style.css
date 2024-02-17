@@ -7,3 +7,12 @@
 .railway{
   font-family: "Raleway", sans-serif;
 }
+
+.bgimg{
+  background:linear-gradient(0deg,#0000004D,#ffffff1A),url('images/banner.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+

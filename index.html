@@ -10,12 +10,25 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- colorGenerate -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              green: "#1DD100",
+            },
+          },
+        },
+      };
+    </script>
+
     <!-- CSS Link -->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="p-5">
     <!-- =========NavPart======== -->
-    <nav class="railway flex justify-between items-center lg:w-4/5 lg:mx-auto m-5">
+    <nav class="railway flex justify-between items-center lg:w-4/5 lg:mx-auto">
       <!-- title -->
       <div>
         <h3 class="text-2xl font-bold">P-Ticket</h3>
@@ -25,7 +38,7 @@
       <div>
         <!-- for Desktop -->
         <div>
-          <ul class="flex gap-5 text-lg">
+          <ul class="hidden lg:flex gap-5 text-lg">
             <li>Home</li>
             <li>About</li>
             <li>Destination</li>
@@ -45,7 +58,156 @@
 
     <!--=========== Header======== -->
     <header>
-      
+      <!-- ======banner====== -->
+      <section class="railway">
+        <div class="bgimg lg:w-4/5 lg:mx-auto h-96 lg:min-h-[700px] lg:mt-16 mt-4 rounded-2xl">
+          <div class="flex flex-col justify-center items-center h-full space-y-7">
+            <h1 class="lg:text-8xl text-5xl font-bold text-white text-center lg:leading-relaxed">
+              End-to-End Travel with <br />
+              <span class="text-green">P Paribahan </span>
+            </h1>
+
+            <p class="text-gray-200 w-3/4 lg:text-xl">
+              Streamline travel, book bus tickets effortlessly. Real-time updates, personalized features, secure payments. Your essential
+              companion for seamless journeys.
+            </p>
+
+            <div class="">
+              <button class="bg-green px-6 py-3 rounded-lg font-bold lg:text-xl text-lg lg:mt-3">Buy Tickets</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </header>
+
+    <!--========= Main section========= -->
+    <main>
+      <!-- =======best Offer For You======= -->
+      <section class="mt-6 lg:mt-16">
+        <h2 class="text-2xl lg:text-6xl mb-3 lg:mb-7 font-bold railway text-center">Best offers for you</h2>
+        <div class="railway flex flex-col md:flex-row gap-10 lg:w-4/5 lg:mx-auto items-center">
+          <!-- =========15% Discount======= -->
+          <div class="flex-1 flex gap-5 bg-[#FFBF0F] px-6 py-6 justify-around items-center max-h-56 rounded-xl">
+            <div class="lg:flex-1 inter flex flex-col justify-center items-center">
+              <h3 class="text-2xl lg:text-4xl font-bold">15% OFF</h3>
+              <h6 class="text-lg lg:text-xl font-semibold">on Your Next purchase</h6>
+              <p class="lg:text-lg">use by February 2024</p>
+            </div>
+            <img src="images/cupon-devider.png" alt="" class="h-56" />
+            <div>
+              <h3 class="text-3xl font-semibold">NEW15</h3>
+              <p class="text-lg">coupon Code</p>
+            </div>
+          </div>
+
+          <!-- =========20% Discount======= -->
+          <div class="flex-1 flex gap-5 bg-[#F78C9C] px-6 py-6 justify-around items-center max-h-56 rounded-xl">
+            <div class="lg:flex-1 inter flex flex-col justify-center items-center">
+              <h3 class="text-2xl lg:text-4xl font-bold">15% OFF</h3>
+              <h6 class="text-lg lg:text-xl font-semibold">on Your Next purchase</h6>
+              <p class="lg:text-lg">use by February 2024</p>
+            </div>
+            <img src="images/cupon-devider.png" alt="" class="h-56" />
+            <div>
+              <h3 class="text-3xl font-semibold">Couple 20</h3>
+              <p class="text-lg">Coupon Code</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- see all offer Btn -->
+        <div class="text-center mt-10">
+          <button class="border-2 border-green rounded-lg px-6 py-3 text-lg font-semibold text-green">See All Offers</button>
+        </div>
+      </section>
+
+      <!-- ======P.H poribahon Section ======-->
+      <section class="mt-6 lg:mt-16 inter">
+        <div class="bg-gray-100 min-h-96 border-t-4 border-green rounded-t-[70px] p-3">
+          <div>
+            <!-- title  -->
+            <div class="mt-24">
+              <h2 class="text-2xl lg:text-6xl mb-3 lg:mb-7 font-bold railway text-center">P.H Paribahan</h2>
+              <p class="w-3/4 lg:text-xl mx-auto text-center">
+                Discover convenience with our Bus Ticket Card Section App. Effortlessly book, receive real-time updates, and ensure secure
+                payments. Your go-to solution for stress-free travel planning, all in the palm of your hand.
+              </p>
+            </div>
+
+            <div>
+              <!-- Poribahon Section -->
+              <section>
+                <div class="bg-white px-6 lg:w-4/5 mx-auto rounded-3xl mt-10 grid grid-cols-1 lg:grid-cols-6 lg:grid-rows-2 grid-rows-2">
+                  <!-- card section -->
+                  <div class="flex flex-col md:flex-row lg:justify-between items-center lg:col-span-4">
+                    <div class="flex items-center gap-3 m-3">
+                      <div>
+                        <img src="images/bus-logo.png" alt="" />
+                      </div>
+                      <div class="space-y-1">
+                        <h3 class="text-xl lg:text-3xl font-bold">GreenLine Paribahan</h3>
+                        <p class="text-sm text-gray-600">Coach-003-WEB ! AC_Business</p>
+                      </div>
+                    </div>
+
+                    <div>
+                      <button class="flex gap-2 px-6 py-3 rounded-lg bg-[#1DD1001A] border border-[#1DD100B3]">
+                        <span>40</span> Seats left
+                      </button>
+                    </div>
+                  </div>
+                  <div class="lg:p-5 p-3 bg-gray-100 lg:row-start-2 lg:col-span-4 mb-5 rounded-2xl">
+                    <div class="flex justify-between items-center space-y-2">
+                      <p>Route</p>
+                      <p class="font-semibold">Dhaka-sylhet</p>
+                    </div>
+
+                    <hr />
+
+                    <div class="flex justify-between items-center space-y-2">
+                      <p>Departure Time</p>
+                      <p class="font-semibold">9.00 PM</p>
+                    </div>
+
+                    <hr />
+
+                    <div class="mt-5 flex flex-col md:flex-row justify-between lg:items-center gap-2">
+                      <button class="bg-gray-300 font-semibold px-4 py-3 rounded-lg">Boarding Point - Laxmipur</button>
+
+                      <button class="bg-gray-300 font-semibold px-4 py-3 rounded-lg">Dropping Point - Bogura</button>
+
+                      <button class="bg-gray-300 font-semibold px-4 py-3 rounded-lg">Est. Time - 11 Hour</button>
+                    </div>
+                  </div>
+
+                  <div class="hidden md:flex lg:row-span-2 justify-center">
+                    <img src="images/info-devider.png" alt="" class="" />
+                  </div>
+
+                  <div class="flex flex-col justify-center items-center lg:col-start-6 lg:col-end-7 lg:row-span-2">
+                    <div><img src="images/fare.png" alt="" /></div>
+                    <h6 class="railway text-xl lg:text-3xl font-bold">550 Taka</h6>
+                    <p class="text-lg">Per Seat</p>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Ticket sit section -->
+              <section>
+                <section>
+                  <div>
+                    <h4>select Your seat</h4>
+                    <hr>
+                    <div>
+                      <img src="images/seat-gray.png" alt="">
+                    </div>
+                  </div>
+                </section>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
