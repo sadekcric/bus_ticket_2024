@@ -41,9 +41,10 @@ function totalPrice() {
 
 function noDuplication(key) {
   if (arr.includes(key.innerText) || arr.length > 3) {
-    key.classList.remove("bg-green", "text-white");
     const message = `no Duplicate Allowed`;
     throw message;
+  } else {
+    key.classList.add("bg-green", "text-white");
   }
   arr.push(key.innerText);
   console.log(arr);
@@ -60,7 +61,12 @@ function noDuplication(key) {
 // }
 
 function enabledSubmit() {
-  if (arr.length > 0) {
-    getID("submit").removeAttribute("disabled");
-  }
+  const number = getID("input_number");
+  number.addEventListener("keyup", function (e) {
+    if (!(e.target.value === "") && arr.length > 0) {
+      getID("submit").removeAttribute("disabled");
+    }
+  });
+
+  
 }
