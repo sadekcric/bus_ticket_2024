@@ -35,7 +35,8 @@ function totalPrice() {
   const totalId = getID("total_price");
   const perTicket = 550;
   totalTicketPrice += perTicket;
-
+  const grandTotal = totalTicketPrice;
+  getID("grand_total").innerText = grandTotal;
   totalId.innerText = totalTicketPrice;
 }
 
@@ -47,18 +48,7 @@ function noDuplication(key) {
     key.classList.add("bg-green", "text-white");
   }
   arr.push(key.innerText);
-  console.log(arr);
 }
-
-// function form() {
-//   const name = getID("input_name");
-//   if(!(name.value==='')){
-//     // getID('submit').removeAttribute('disabled')
-//     console.log(`achi re vai achi`);
-//   }else{
-//     console.log(`ami faka`);
-//   }
-// }
 
 function enabledSubmit() {
   const number = getID("input_number");
@@ -67,6 +57,31 @@ function enabledSubmit() {
       getID("submit").removeAttribute("disabled");
     }
   });
-
-  
 }
+
+const couponInput = getID("coupon_input");
+const couponBtn = getID("coupon_btn");
+function coupon() {
+  if (arr.length === 4) {
+    couponInput.removeAttribute("disabled");
+    couponBtn.removeAttribute("disabled");
+  }
+}
+
+function couponCondition() {
+  couponBtn.addEventListener("click", function () {
+    if (couponInput.value === "NEW15") {
+      createDiscount(15);
+      getID('input_div').classList.add('hidden')
+    }
+  });
+}
+
+function createDiscount(per){
+  let grandTotal = totalTicketPrice;
+  const discount=Math.round(totalTicketPrice*per/100);
+  
+  grandTotal-=discount;
+  getID("grand_total").innerText = grandTotal;
+}
+

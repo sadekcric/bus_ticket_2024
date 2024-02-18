@@ -14,6 +14,9 @@ for (let key of keys) {
     createTicketUint();
     appendChildInCard(key);
     totalPrice();
+    coupon();
+    couponCondition();
+    
   });
 }
 

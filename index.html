@@ -384,21 +384,21 @@
                       <!-- total -->
                       <div class="flex justify-between mt-2">
                         <h6 class="font-semibold text-lg">Total Price</h6>
-                        <h6 class="font-semibold text-lg">BDT <span id="total_price"></span></h6>
+                        <h6 class="font-semibold text-lg">BDT <span id="total_price">0</span></h6>
                       </div>
 
                       <!-- ======input===== -->
-                      <div>
+                      <div id="input_div">
                         <label class="input flex items-center gap-2 px-4 py-7 mt-3">
-                          <input type="text" class="lg:grow border-0" placeholder="Have any coupon?" />
-                          <button class="bg-green px-6 py-2 text-white font-semibold rounded-lg -ml-20 lg:-ml-0">Apply</button>
+                          <input id="coupon_input" type="text" class="lg:grow border-0" placeholder="Have any coupon?" disabled />
+                          <button id="coupon_btn" class="bg-green px-6 py-2 text-white font-semibold rounded-lg -ml-20 lg:-ml-0" disabled>Apply</button>
                         </label>
                       </div>
 
                       <!-- ground Total -->
                       <div class="flex justify-between mt-2 mb-5">
                         <h6 class="font-semibold text-lg">Grand Total</h6>
-                        <h6 class="font-semibold text-lg">BDT <span>1100</span></h6>
+                        <h6 class="font-semibold text-lg">BDT <span id="grand_total">0</span></h6>
                       </div>
                     </div>
                   </div>
