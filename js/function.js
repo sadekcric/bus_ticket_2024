@@ -2,23 +2,29 @@ let totalSet = 40;
 let ticket = 0;
 let totalTicketPrice = 0;
 const arr = [];
+const couponInput = getID("coupon_input");
+const couponBtn = getID("coupon_btn");
 
+// document.getElementById
 function getID(id) {
   return document.getElementById(id);
 }
 
+// How many seat available in Bus.
 function seatLeft() {
   const seatsLeft = getID("seats-left");
   totalSet--;
   seatsLeft.innerText = totalSet;
 }
 
+// Ticket Unit create Function.
 function createTicketUint() {
   const unit = getID("ticket-unit");
   ticket++;
   unit.innerText = ticket;
 }
 
+// create Ticket Unit Append Child in Card
 function appendChildInCard(key) {
   const cardSection = getID("card_section");
   const createDiv = document.createElement("div");
@@ -31,6 +37,7 @@ function appendChildInCard(key) {
   cardSection.appendChild(createDiv);
 }
 
+// Total Ticket Price Function
 function totalPrice() {
   const totalId = getID("total_price");
   const perTicket = 550;
@@ -40,19 +47,19 @@ function totalPrice() {
   totalId.innerText = totalTicketPrice;
 }
 
+// no Duplication Function and max Ticket Handling.
 function noDuplication(key) {
   if (arr.includes(key.innerText)) {
     throw alert(`no Duplication Allowed`);
-  } else if(arr.length > 3){
-    throw alert(`Only '4' Ticket is Available for one Person.`)
-  }
-  
-  else {
+  } else if (arr.length > 3) {
+    throw alert(`Only '4' Ticket is Available for one Person.`);
+  } else {
     key.classList.add("bg-green", "text-white");
   }
   arr.push(key.innerText);
 }
 
+// submit Button Enable Function
 function enabledSubmit() {
   const number = getID("input_number");
   number.addEventListener("keyup", function (e) {
@@ -66,8 +73,7 @@ function enabledSubmit() {
   }
 }
 
-const couponInput = getID("coupon_input");
-const couponBtn = getID("coupon_btn");
+// Coupon Enable rules and handling
 function coupon() {
   if (arr.length === 4) {
     couponInput.removeAttribute("disabled");
@@ -75,6 +81,7 @@ function coupon() {
   }
 }
 
+// Coupon Name set Function.
 function couponCondition() {
   couponBtn.addEventListener("click", function () {
     if (couponInput.value === "NEW15") {
@@ -88,6 +95,7 @@ function couponCondition() {
   });
 }
 
+// when submitter the Coupon Your Discount is '' . Discount Function.
 function createDiscount(per) {
   let grandTotal = totalTicketPrice;
   const discount = Math.round((totalTicketPrice * per) / 100);
