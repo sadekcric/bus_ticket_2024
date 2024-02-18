@@ -46,4 +46,5 @@ getID("show").addEventListener("click", function () {
   }
   const success = getID("success");
   success.classList.add("hidden");
+  window.location.reload();
 });
