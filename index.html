@@ -73,7 +73,9 @@
             </p>
 
             <div class="">
-              <button id="go_to_ticket_section" class="bg-green px-6 py-3 rounded-lg font-bold lg:text-xl text-lg lg:mt-3">Buy Tickets</button>
+              <button id="go_to_ticket_section" class="bg-green px-6 py-3 rounded-lg font-bold lg:text-xl text-lg lg:mt-3">
+                Buy Tickets
+              </button>
             </div>
           </div>
         </div>
@@ -151,7 +153,7 @@
                     </div>
 
                     <div>
-                      <button  class="flex gap-2 px-6 py-3 rounded-lg bg-[#1DD1001A] border border-[#1DD100B3]">
+                      <button class="flex gap-2 px-6 py-3 rounded-lg bg-[#1DD1001A] border border-[#1DD100B3]">
                         <span id="seats-left">40</span> Seats left
                       </button>
                     </div>
@@ -362,7 +364,9 @@
                     <!-- seat class price -->
                     <div class="lg:w-4/5 lg:mx-auto p-3">
                       <div class="my-5 flex justify-between">
-                        <h6 class="text-lg lg:text-xl font-bold">Seat <span id="ticket-unit" class="bg-green text-white px-4 py-1 rounded-lg">0</span></h6>
+                        <h6 class="text-lg lg:text-xl font-bold">
+                          Seat <span id="ticket-unit" class="bg-green text-white px-4 py-1 rounded-lg">0</span>
+                        </h6>
 
                         <h6 class="text-lg lg:text-xl font-bold">Class</h6>
 
@@ -387,13 +391,20 @@
                         <h6 class="font-semibold text-lg">BDT <span id="total_price">0</span></h6>
                       </div>
 
+                      <div id="discount_parent"></div>
+                      
+                      
                       <!-- ======input===== -->
                       <div id="input_div">
+                        
                         <label class="input flex items-center gap-2 px-4 py-7 mt-3">
                           <input id="coupon_input" type="text" class="lg:grow border-0" placeholder="Have any coupon?" disabled />
-                          <button id="coupon_btn" class="bg-green px-6 py-2 text-white font-semibold rounded-lg -ml-20 lg:-ml-0" disabled>Apply</button>
+                          <button id="coupon_btn" class="bg-green px-6 py-2 text-white font-semibold rounded-lg -ml-20 lg:-ml-0" disabled>
+                            Apply
+                          </button>
                         </label>
                       </div>
+                      <p id="invalid_message" class="font-bold text-red-500 text-lg"></p>
 
                       <!-- ground Total -->
                       <div class="flex justify-between mt-2 mb-5">
@@ -404,26 +415,38 @@
                   </div>
 
                   <!-- form -->
-                  <div class=" p-3">
+                  <div class="p-3">
                     <form id="myform" action="" class="flex flex-col gap-5">
                       <!-- name -->
-                      <label for="name" >
+                      <label for="name">
                         <h6 class="text-lg font-semibold">Passenger Name<sup>*</sup></h6>
-                        <input id="input_name" type="text" placeholder="Enter Your name" class="input input-bordered w-full " required/>
+                        <input id="input_name" type="text" placeholder="Enter Your name" class="input input-bordered w-full" required />
                       </label>
 
                       <!-- Phone Number -->
-                      <label for="phone_number" >
+                      <label for="phone_number">
                         <h6 class="text-lg font-semibold">Phone Number<sup>*</sup></h6>
-                        <input id="input_number" type="number" placeholder="Enter Your Phone Number" class="input input-bordered w-full " required/>
+                        <input
+                          id="input_number"
+                          type="number"
+                          placeholder="Enter Your Phone Number"
+                          class="input input-bordered w-full"
+                          required
+                        />
                       </label>
                       <!-- Email -->
-                      <label for="phone_number" >
+                      <label for="phone_number">
                         <h6 class="text-lg font-semibold">Email ID</h6>
                         <input type="email" placeholder="Enter Your email id" class="input input-bordered w-full" />
                       </label>
 
-                      <input id="submit" type="submit" value="Next" class="input input-bordered w-full bg-green font-bold text-lg" disabled/>
+                      <input
+                        id="submit"
+                        type="submit"
+                        value="Next"
+                        class="input input-bordered w-full bg-green font-bold text-lg"
+                        disabled
+                      />
                     </form>
                   </div>
                 </section>
@@ -439,27 +462,25 @@
     <div id="success" class="hidden">
       <div class="bg-gray-100 min-h-screen flex justify-center items-center absolute w-full top-0 left-0">
         <div class="inter bg-white w-2/3 mx-auto flex flex-col items-center p-5 lg:p-10 rounded-2xl">
-         <div class="text-center mb-10 ">
-           <img src="images/success.png" alt="">
-         </div>
-         <h4 class="text-green text-2xl font-semibold text-center mb-10">SUCCESS</h4>
- 
-         <p class="font-bold text-lg text-center mb-5">Thank You For Booking Our Bus Seats.
-           <br>
-           We are Working hard to find the best service and deals for You.
-         </p>
- 
-         <p class="text-lg text-center mb-5">Shortly you will find a confirmation in your email.</p>
- 
-         <div class="text-center">
-           <button id="show" type="submit" class="bg-green text-white px-20 py-3 rounded-full mb-5">Continue</button>
-         </div>
- 
+          <div class="text-center mb-10">
+            <img src="images/success.png" alt="" />
+          </div>
+          <h4 class="text-green text-2xl font-semibold text-center mb-10">SUCCESS</h4>
+
+          <p class="font-bold text-lg text-center mb-5">
+            Thank You For Booking Our Bus Seats.
+            <br />
+            We are Working hard to find the best service and deals for You.
+          </p>
+
+          <p class="text-lg text-center mb-5">Shortly you will find a confirmation in your email.</p>
+
+          <div class="text-center">
+            <button id="show" type="submit" class="bg-green text-white px-20 py-3 rounded-full mb-5">Continue</button>
+          </div>
         </div>
-     </div>
+      </div>
     </div>
-
-
 
     <script src="js/function.js"></script>
     <script src="js/script.js"></script>

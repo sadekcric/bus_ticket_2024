@@ -41,10 +41,13 @@ function totalPrice() {
 }
 
 function noDuplication(key) {
-  if (arr.includes(key.innerText) || arr.length > 3) {
-    const message = `no Duplicate Allowed`;
-    throw message;
-  } else {
+  if (arr.includes(key.innerText)) {
+    throw alert(`no Duplication Allowed`);
+  } else if(arr.length > 3){
+    throw alert(`Only '4' Ticket is Available for one Person.`)
+  }
+  
+  else {
     key.classList.add("bg-green", "text-white");
   }
   arr.push(key.innerText);
@@ -57,6 +60,10 @@ function enabledSubmit() {
       getID("submit").removeAttribute("disabled");
     }
   });
+
+  if (number.value.length > 0 && arr.length > 0) {
+    getID("submit").removeAttribute("disabled");
+  }
 }
 
 const couponInput = getID("coupon_input");
@@ -72,16 +79,26 @@ function couponCondition() {
   couponBtn.addEventListener("click", function () {
     if (couponInput.value === "NEW15") {
       createDiscount(15);
-      getID('input_div').classList.add('hidden')
+      // getID("input_div").classList.add("hidden");
+    } else if (couponInput.value === "Couple 20") {
+      createDiscount(20);
+    } else {
+      getID("invalid_message").innerText = "Invalid Coupon. Please Provide a Correct Coupon.";
     }
   });
 }
 
-function createDiscount(per){
+function createDiscount(per) {
   let grandTotal = totalTicketPrice;
-  const discount=Math.round(totalTicketPrice*per/100);
-  
-  grandTotal-=discount;
+  const discount = Math.round((totalTicketPrice * per) / 100);
+  const discountParent = getID("discount_parent");
+  discountParent.innerHTML = `
+  <h6 class="font-semibold text-lg">DiscountPrice</h6>
+  <h6 class="font-semibold text-lg">BDT <span>${discount}</span></h6>
+  `;
+  discountParent.classList.add("flex", "justify-between", "mt-2");
+  grandTotal -= discount;
   getID("grand_total").innerText = grandTotal;
+  getID("invalid_message").innerText = "";
+  getID("input_div").classList.add("hidden");
 }
-

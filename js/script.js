@@ -1,5 +1,5 @@
 // from btn to ticket section move
-enabledSubmit();
+
 document.getElementById("go_to_ticket_section").addEventListener("click", function () {
   const phPoribohod = document.getElementById("ph_section");
   phPoribohod.scrollIntoView({ behavior: "smooth" });
@@ -16,7 +16,7 @@ for (let key of keys) {
     totalPrice();
     coupon();
     couponCondition();
-    
+    enabledSubmit();
   });
 }
 
