@@ -14,10 +14,33 @@ for (let key of keys) {
     createTicketUint();
     appendChildInCard(key);
     totalPrice();
-    enabledSubmit()
+    enabledSubmit();
   });
 }
 
-getID('submit').addEventListener('click', function(){
-  form();
-})
+getID("submit").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const name = getID("input_name");
+  const number = getID("input_number");
+
+  if (!(name.value === "") && !(number.value === "")) {
+    const success = getID("success");
+    success.classList.remove("hidden");
+    console.log(success);
+
+    const sections = document.querySelectorAll("section");
+    for (let section of sections) {
+      section.classList.add("hidden");
+    }
+  }
+});
+
+getID("show").addEventListener("click", function () {
+  const sections = document.querySelectorAll("section");
+  for (let section of sections) {
+    section.classList.remove("hidden");
+  }
+  const success = getID("success");
+  success.classList.add("hidden");
+});

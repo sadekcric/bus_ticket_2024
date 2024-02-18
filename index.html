@@ -405,7 +405,7 @@
 
                   <!-- form -->
                   <div class=" p-3">
-                    <form action="" class="flex flex-col gap-5">
+                    <form id="myform" action="" class="flex flex-col gap-5">
                       <!-- name -->
                       <label for="name" >
                         <h6 class="text-lg font-semibold">Passenger Name<sup>*</sup></h6>
@@ -415,7 +415,7 @@
                       <!-- Phone Number -->
                       <label for="phone_number" >
                         <h6 class="text-lg font-semibold">Phone Number<sup>*</sup></h6>
-                        <input type="number" placeholder="Enter Your Phone Number" class="input input-bordered w-full " required/>
+                        <input id="input_number" type="number" placeholder="Enter Your Phone Number" class="input input-bordered w-full " required/>
                       </label>
                       <!-- Email -->
                       <label for="phone_number" >
@@ -433,6 +433,33 @@
         </div>
       </section>
     </main>
+
+    <!-- successful submitted -->
+
+    <div id="success" class="hidden">
+      <div class="bg-gray-100 min-h-screen flex justify-center items-center absolute w-full top-0 left-0">
+        <div class="inter bg-white w-2/3 mx-auto flex flex-col items-center p-5 lg:p-10 rounded-2xl">
+         <div class="text-center mb-10 ">
+           <img src="images/success.png" alt="">
+         </div>
+         <h4 class="text-green text-2xl font-semibold text-center mb-10">SUCCESS</h4>
+ 
+         <p class="font-bold text-lg text-center mb-5">Thank You For Booking Our Bus Seats.
+           <br>
+           We are Working hard to find the best service and deals for You.
+         </p>
+ 
+         <p class="text-lg text-center mb-5">Shortly you will find a confirmation in your email.</p>
+ 
+         <div class="text-center">
+           <button id="show" type="submit" class="bg-green text-white px-20 py-3 rounded-full mb-5">Continue</button>
+         </div>
+ 
+        </div>
+     </div>
+    </div>
+
+
 
     <script src="js/function.js"></script>
     <script src="js/script.js"></script>
