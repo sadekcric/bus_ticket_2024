@@ -26,7 +26,7 @@ getID("submit").addEventListener("click", function (e) {
   const name = getID("input_name");
   const number = getID("input_number");
 
-  if (!(name.value === "") && !(number.value === "")) {
+  if (!(number.value === "")) {
     const success = getID("success");
     success.classList.remove("hidden");
     console.log(success);
